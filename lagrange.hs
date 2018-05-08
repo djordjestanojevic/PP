@@ -41,4 +41,5 @@ lagrange a x f = lagr a x f x
 lagr a [] _ l = 0                    
 lagr a (x:xs) (f:fs)  l= ((lagr a xs fs l)+ (f* (lpol a l x 1)))
 
+inverz a x f = lagrange a f x
 
