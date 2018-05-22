@@ -16,11 +16,10 @@ ekvidistantni1 (x2:x3:xs) razlika
 
 konacne :: [Double] -> Int -> Double
 konacne [f] 0 = f
-
 konacne [f1, f2] 1 = f2 - f1
-
 konacne f red = (konacne (drop 1 f) (red-1))-(konacne (take red f)(red-1))
 
+interval :: Double -> [Double] -> [Double]
 interval a [f1, f2] = [f1,f2]
 interval a [] = error "Prosledili ste praznu listu!"
 interval a [f] = error "Neispravni argumenti!"
@@ -87,7 +86,7 @@ inverzna red f q eps f_x
     |abs ((fi q red f f_x) - q) < eps = (fi q red f f_x)
     |otherwise = fi (fi q red f f_x) red f f_x
 
-  
+izracunajX :: Int -> [Double] -> [Double] -> Double -> Double -> Double  
 izracunajX red f x eps f_x = (inverzna red f 0 eps f_x)*(x!!1 - x!!0) + (x!!0)
   
 fi :: Double -> Int -> [Double] -> Double -> Double
