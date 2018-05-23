@@ -1,5 +1,7 @@
 module Simple where
 
+--Funkcije ekvidistantni i ekvidistantni1 proveravaju da li su cvorovi unutar liste cvorova x ekvidistantni.
+
 ekvidistantni :: [Double] -> Bool
 ekvidistantni [x] = error "Neispravni argumenti"
 ekvidistantni [x1, x2] = True
@@ -12,14 +14,9 @@ ekvidistantni1 [a, b] razlika
 ekvidistantni1 (x2:x3:xs) razlika
     | abs (x2 - x3) /= razlika = False
     | otherwise = ekvidistantni1 (x3:xs) razlika
-polyval :: [Double] -> Double -> Double
-polyval lista x = polynomial (reverse lista) x
+    
 
-
-polynomial :: [Double] -> Double -> Double
-polynomial [a] x = a
-polynomial (a:xs) x = (polynomial xs x)*x + a
-
+--isdecreasing i isincreasing proveravaju da li su cvorovi unutar liste uredjeni opadajuce, odnosno rastuce.
 
 isdecreasing :: [Double] -> Bool
 isdecreasing [x] = True
@@ -39,16 +36,22 @@ isincreasing (x:y:xs) | (isincreasing (y:xs)) && x<y = True
                       | otherwise = False
 
 
+--ismonotonic koristeci isincreasing i isdecreasing proverava da li je funkcija monotona
+                      
 ismonotonic :: [Double] -> Bool
 ismonotonic x | (isincreasing x) || (isdecreasing x) = True
               |otherwise = error "Funkcija nije monotona"
-              
+ 
+ 
+ --factorial racuna faktorijel broja n
               
 factorial :: Int -> Double
 factorial n
     | n == 0 = 1.0
     | otherwise = (fromIntegral n) * factorial (n-1)
 
+
+--konacne racuna konacnu razliku odredjenog reda
     
 konacne :: [Double] -> Int -> Double
 konacne [f] 0 = f

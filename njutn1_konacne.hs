@@ -1,6 +1,8 @@
 import Simple as S
 
 
+--pom i pom1 racunaju proizvod q*(q-1)*(q-2)*...*(q-n) gde je q = (x-x0)/h, h-rastojanje izmedju cvorova
+
 pom :: Double -> Int -> Double
 pom q n = pom1 q n 0
 
@@ -9,6 +11,13 @@ pom1 q n i
     |i == n = 1
     | otherwise = (q - (fromIntegral i)) * pom1 q n (i+1)
 
+    
+--njutn1 i njutn1pom racunaju vrednost funkcije u tacki a primenom I Njutnovog interpolacionog polinoma sa konacnim razlikama
+--a - tacka u kojoj zelimo da odredimo vrednost funkcije
+--x - lista cvorova
+--f - lista vrednosti funkcije u cvorovima
+--n - stepen polinoma
+    
 njutn1 :: Double -> [Double] -> [Double] -> Int -> Double
 njutn1 a x f n 
     | S.ekvidistantni x /= True = error "Cvorovi nisu ekvidistantni"
