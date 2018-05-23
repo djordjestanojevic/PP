@@ -1,9 +1,9 @@
 import Simple as S
-proveri :: Double -> Double ->(Double -> Double)-> Bool
-proveri a b f =  S.ismonotonic (map (f) [a,a+(b-a)/10..b])
 
+
+--pronalazi nulu eksplicitno zadate funkcije f na intervalu (a,b) sa tacnoscu e koriscenjem metode polovljenja intervala
 nula_funkcije :: (Double -> Double) -> Double -> Double -> Double -> Double
-nula_funkcije f a b e |proveri a b f == False = error "Funkcija nije monotona"
+nula_funkcije f a b e |S.ismonotonic (map (f) [a,a+(b-a)/10..b]) == False = error "Funkcija nije monotona"
                       |f b == 0 = b
                       |f a == 0 = a
                       | abs(b-a)<e = b
