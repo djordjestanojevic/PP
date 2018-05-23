@@ -14,4 +14,4 @@ Implementacija numerickih algoritama:
   Lezandrovi polinomi
   Cebisevljevi polinomi
   Gausove kvadraturne formule
-  Metode resavanja nelinearnih jednacina (polovljenje intervala,regula falsi,metoda secice,Njutnova metoda tangente sa      modifikacijama,kombinovana metoda, iterativna sa modifikacijama)
+  Metode resavanja nelinearnih jednacina (polovljenje intervala,regula falsi,metoda secice,Njutnova metoda tangente sa      modifikacijama, iterativna sa modifikacijama)
