@@ -8,3 +8,5 @@ napravi_f (xim:xi:xip:xs) (fim:fi:fip:fs) = ((fip-fim)/(xip-xim)):(napravi_f (xi
   
 izvod :: Double -> [Double] -> [Double] -> Double
 izvod a x f = N.njutn a (drop 1 (take (length x -1) x)) (napravi_f x f) ((length x)-3)
+
+
