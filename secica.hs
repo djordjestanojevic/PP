@@ -1,29 +1,7 @@
-isdecreasing :: [Double] -> Bool
-isdecreasing [x] = True
-isdecreasing [x,y] |x>y = True
-                   |otherwise = False
-
-isdecreasing (x:y:xs) |x>y  && (isdecreasing (y:xs)) = True
-                      | otherwise = False
-
-
-isincreasing :: [Double] -> Bool
-isincreasing [x] = True
-isincreasing [x,y] |x<y = True
-                   |otherwise = False
-
-isincreasing (x:y:xs) | (isincreasing (y:xs)) && x<y = True
-                      | otherwise = False
-
-
-ismonotonic :: [Double] -> Bool
-ismonotonic x | (isincreasing x) || (isdecreasing x) = True
-              | otherwise = error "Funkcija nije monotona"
-
-              
+import Simple as S              
 proveri :: Double -> Double -> (Double -> Double) -> Bool
-proveri a b f |a<b =  ismonotonic (map (f) [a,a+(b-a)/10..b])
-              |otherwise = ismonotonic (map (f) [b,b+(b-a)/10..a])
+proveri a b f |a<b =  S.ismonotonic (map (f) [a,a+(b-a)/10..b])
+              |otherwise = S.ismonotonic (map (f) [b,b+(b-a)/10..a])
               
           
 niz :: (Double -> Double) -> Double -> Double -> Double -> Double          
