@@ -40,7 +40,7 @@ isincreasing (x:y:xs) | (isincreasing (y:xs)) && x<y = True
                       
 ismonotonic :: [Double] -> Bool
 ismonotonic x | (isincreasing x) || (isdecreasing x) = True
-              |otherwise = error "Funkcija nije monotona"
+              |otherwise = False
  
  
  --factorial racuna faktorijel broja n
