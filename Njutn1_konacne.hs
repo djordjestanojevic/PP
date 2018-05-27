@@ -1,3 +1,4 @@
+module Njutn1_konacne where
 import Simple as S
 
 
