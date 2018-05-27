@@ -1,3 +1,4 @@
+module Inverzna_interpolacija where
 import Simple as S
 
 --pravi niz konacnih razlika u redu koji olaksava dalje izracunavanje
