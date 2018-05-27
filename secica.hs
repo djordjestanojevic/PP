@@ -7,8 +7,8 @@ niz f x0 xn = (xn-((x0-xn)*(f xn)/((f x0)-(f xn))))
 --pronalazi nulu eksplicitno zadate funkcije f sa tacnoscu e koriscenjem metode secice
 nula :: (Double -> Double) -> Double -> Double -> Double -> Double
 nula f a b e|(f a)*(f b) > 0 = error "Funkcija nije lokalizovana"
-            |S.ismonotonic (map (f) niz) == False = error "Funkcija nije monotona"
-            |S.ismonotonic (niz_izvoda niz (map f niz) niz) == False = error "Drugi izvod nije konstantan"
+            |S.ismonotonic (map (f) niz) == False = error "Prvi izvod nije konstantnog znaka"
+            |S.ismonotonic (niz_izvoda niz (map f niz) niz) == False = error "Drugi izvod nije konstantnog znaka"
             |(f b)*(D.izvod b niz (niz_izvoda niz (map f niz) niz))>0 = nula_funkcije f b a e
             |otherwise = nula_funkcije f a b e
     where niz = [a,a+(b-a)/10..b]
