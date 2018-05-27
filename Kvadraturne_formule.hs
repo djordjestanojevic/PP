@@ -1,4 +1,4 @@
-
+module Kvadraturne_formule
 --pravougaonik racuna primenjuje opstu kvadraturnu formulu pravougaonika
 
 pravougaonik :: Double -> Double -> Double -> (Double -> Double) -> Double
