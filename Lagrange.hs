@@ -1,4 +1,4 @@
-
+module Lagrange where
 
 --lpol racuna proizvod od j=0 do n, j/=i, (x - xj)/(xi - xj) koji ce nam biti potreban za Lagranzov polinom
 
