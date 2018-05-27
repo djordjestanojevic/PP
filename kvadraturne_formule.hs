@@ -2,7 +2,7 @@
 --pravougaonik racuna primenjuje opstu kvadraturnu formulu pravougaonika
 
 pravougaonik :: Double -> Double -> Double -> (Double -> Double) -> Double
-pravougaonik a b h f = (foldr (+) 0 (map (f) [a+h/2,a+3*h/2..b-h/2]))
+pravougaonik a b h f = (foldr (+) 0 (map (f) [a+h/2,a+3*h/2..b-h/2]))*h
 
 
 --trapez primenjuje opstu kvadraturnu formulu trapeza
