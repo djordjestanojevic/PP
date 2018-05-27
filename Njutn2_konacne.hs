@@ -1,3 +1,4 @@
+module Njutn2_konacne where
 import Simple as S
 
 --pom i pom1 racunaju proizvod q*(q+1)*(q+2)*(q+3)*..*(q+n), n-stepen polinoma, q = (x-xn)/h, h-rastojanje izmedju cvorova
