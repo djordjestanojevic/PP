@@ -1,3 +1,4 @@
+module Njutnova_metoda_tangente where
 import Diferenciranje as D
 import Simple as S
 --pronalazi nulu eksplicitno zadate funkcije f na intervalu a b sa tacnoscu eps

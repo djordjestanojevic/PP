@@ -1,3 +1,4 @@
+module Secica where
 import Simple as S
 import Diferenciranje as D
 --pravi sledeci clan iterativnog niza

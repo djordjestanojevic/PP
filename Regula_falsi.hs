@@ -1,3 +1,4 @@
+module Regula_falsi where
 import Simple as S
 import Diferenciranje as D
 
